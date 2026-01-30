@@ -1,0 +1,53 @@
+experiment:
+  name: smt_cta_dsifn
+  out_dir: runs/smt_cta_dsifn
+
+dataset:
+  name: generic_cd
+  root: /path/to/DSIFN-CD
+  split_folders:
+    train: train
+    val: val
+    test: test
+  img_dir_a: A
+  img_dir_b: B
+  mask_dir: label
+  img_ext: .png
+  mask_ext: .png
+  input_size: 512
+
+model:
+  in_channels: 3
+  base_channels: [64, 128, 256, 512]
+  depths: [2, 2, 6, 2]
+  num_heads: [2, 4, 8, 16]
+  head_groups: [1, 1, 1]
+  window_sizes: [7, 7, 9, 11]
+  ssa_rhos: [1, 2, 2, 4]
+  drop_path: 0.2
+  mlp_ratio: 4.0
+  aux_outputs: true
+
+train:
+  epochs: 200
+  batch_size: 8
+  num_workers: 4
+  lr: 0.0006
+  weight_decay: 0.05
+  warmup_epochs: 10
+  grad_clip: 1.0
+  amp: true
+  seed: 0
+  early_stop_patience: 30
+
+loss:
+  ce_weight: 1.0
+  stage_weights: [1.0, 0.5, 0.25, 0.125]
+  wbce_weight: 1.0
+  ssim_weight: 0.5
+  siou_weight: 0.5
+  max_pos_weight: 10.0
+
+eval:
+  threshold: 0.5
+  boundary_tol: 2
