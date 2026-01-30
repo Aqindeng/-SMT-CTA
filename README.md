@@ -46,5 +46,3 @@ python scripts/infer.py \
 ## Reproducibility
 - Seeds are fixed via `smt_cta.utils.seed.set_seed`.
 - All hyperparameters are stored in YAML configs.
-- For exact reproducibility, record the commit hash and tag a release.
-
