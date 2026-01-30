@@ -1,9 +1,9 @@
 # SMT-CTA: Spatiotemporal Multi-granular Transformer with Cross-temporal Aggregation
 
 This repository provides a PyTorch implementation of **SMT-CTA**, a hybrid CNN–Transformer model for bi-temporal remote sensing change detection, incorporating:
-- Change-Aware Attention (**CAAttn**) with grouped heads and difference-aware cross-temporal interaction
-- Shuffled Sparse Attention (**SSA**) with learnable offsets for content-adaptive sparse token mixing
-- Change-Weighted Feature Fusion (**CWFF**) with per-channel softmax competition
+- Change-Aware Attention (CAAttn) with grouped heads and difference-aware cross-temporal interaction
+- Shuffled Sparse Attention (SSA) with learnable offsets for content-adaptive sparse token mixing
+- Change-Weighted Feature Fusion (CWFF) with per-channel softmax competition
 - Bottom-up pyramid aggregation and a lightweight decoder
 - Composite supervision: CE + stage-wise WBCE + SSIM + SoftIoU
 - Evaluation metrics: OA, Precision, Recall, F1, mIoU, and Boundary F1 (BF1)
