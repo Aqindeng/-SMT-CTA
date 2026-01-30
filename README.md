@@ -48,5 +48,3 @@ python scripts/infer.py \
 - All hyperparameters are stored in YAML configs.
 - For exact reproducibility, record the commit hash and tag a release.
 
-## Citation
-If you use this code, please cite the corresponding manuscript and the code archive DOI (if applicable).
